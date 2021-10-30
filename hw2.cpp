@@ -44,6 +44,13 @@ void transpose_2dStackMat(double A[SIZE][SIZE] , double M[SIZE][SIZE] ,int row, 
 
 }
 
+void getUpper_2dStackMat(double A[SIZE][SIZE], A[SIZE][SIZE],int row, int col ) {
+	for (int i = 0; i < row; ++i)
+	{
+		/* code */
+	}
+}
+
 void print_2DStackMat(double A[SIZE][SIZE] , int row, int col)
 {
 	for (int i = 0; i < row; i++)
