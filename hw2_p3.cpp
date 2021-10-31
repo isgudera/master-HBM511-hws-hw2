@@ -6,7 +6,8 @@ double	func (double x) {
 	return pow(x,3) - 11.0;
 }
 double	func2 (double x) {
-	return pow(x,3) +x +11.0;
+	return pow(3*x*x+11,0.25);
+	//return (11+x) / pow(x,2)+1;
 }
 double bisection(double a, double b, double tol) {
 	double x;
@@ -40,7 +41,7 @@ double fixedPointIter(double p0, double tol, int N) {
 		}
 		printf("Iteration %d: Current value = %lf\n",i,p);
 		i++;
-		p0 = p;
+		p0 = func2(p);
 		if(i>N)
     	{
 			printf("Solution not found (method diverges)\n");
@@ -60,7 +61,7 @@ int main(int argc, char const *argv[])
 	double tol = 1e-8;
 	x1 = bisection(a,b,tol);
 	double p0 = 1;
-	int N = 1000;
+	int N = 15;
 	x2 = fixedPointIter(p0,tol,N);
 
 /*	double error = std::cbrt(11);
