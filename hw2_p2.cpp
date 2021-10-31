@@ -9,8 +9,8 @@ void fill2dMatrix (double **A, int row, int col) {
 		for (int j = 0; j < col; j++)
 		{	
 			printf("Lütfen A[%d][%d] için değer giriniz\n", i,j);
-			scanf("%d", &value);
-			A[i][j] = value;
+			scanf("%lf", A[i][j]);
+		//	A[i][j] = value;
 		}
 	}
 }
@@ -55,7 +55,13 @@ int main(int argc, char const *argv[])
 	printf("Lütfen kare matrisin boyutunu giriniz: ");
 	scanf("%d", &size);
 	double **A;
-	getMemory(A,size);
+	A = (double **)malloc(size * sizeof(double*));
+	for (int i = 0; i<size; i++)
+	{
+		A[i] = (double *)malloc(size*sizeof(double));
+	}
+	printf("Memory is taken.\n");
+	//getMemory(A,size);
 
 	fill2dMatrix(A,size,size);
 	print_2DMatrix(A,size,size);
